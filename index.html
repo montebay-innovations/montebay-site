@@ -26,13 +26,15 @@
 <meta property="og:url" content="https://montebay.io/">
 <meta property="og:title" content="Built a web app? We'll get it into the App Store.">
 <meta property="og:description" content="We take web apps, including ones built with AI tools, onto the App Store and Google Play: native features, in-app subscriptions, and App Review. Fixed prices.">
-<meta property="og:image" content="https://montebay.io/montebay_logo.webp">
+<meta property="og:image" content="https://montebay.io/assets/images/og-montebay.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://montebay.io/">
 <meta property="twitter:title" content="Built a web app? We'll get it into the App Store.">
 <meta property="twitter:description" content="We take web apps, including ones built with AI tools, onto the App Store and Google Play: native features, in-app subscriptions, and App Review. Fixed prices.">
-<meta property="twitter:image" content="https://montebay.io/montebay_logo.webp">
+<meta property="twitter:image" content="https://montebay.io/assets/images/og-montebay.png">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -55,7 +57,7 @@
   "url": "https://montebay.io",
   "logo": "https://montebay.io/montebay_logo.webp",
   "email": "contact@montebay.io",
-  "address": { "@type": "PostalAddress", "streetAddress": "9781 NW 25th Street", "addressLocality": "Sunrise", "addressRegion": "FL", "postalCode": "33322", "addressCountry": "US" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Sunrise", "addressRegion": "FL", "addressCountry": "US" },
   "makesOffer": [
     { "@type": "Offer", "name": "App Store rescue", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "USD" } },
     { "@type": "Offer", "name": "Web app to App Store and Google Play", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1800, "priceCurrency": "USD" } },
@@ -126,9 +128,10 @@
             <h1>Built a web app? We&rsquo;ll get it into the App Store.</h1>
             <p class="lede">We take web apps, including ones built with Cursor, Lovable or Replit, onto iPhone and Android: native features, in-app subscriptions, and App Review. Fixed prices, and a written quote before any work starts.</p>
             <div class="cta-actions">
-                <a class="btn btn-primary" href="contact.html">Tell us about your app</a>
+                <a class="btn btn-primary" href="contact.html">Get a free review</a>
                 <a class="btn" href="#pricing">See pricing</a>
             </div>
+            <p class="reply-note">We reply within one business day with a read on scope and price.</p>
         </div>
 
         <aside class="log" aria-label="Svelio's App Review history">
@@ -182,38 +185,9 @@
     </div>
 </section>
 
-<section class="hm-sec" id="pricing">
-    <div class="wrap">
-        <h2>Fixed prices</h2>
-        <p class="intro">Every project starts with a free look at your app. You get a written quote for a fixed price before we start, and the code stays yours.</p>
-        <dl class="prices">
-            <div>
-                <dt>App Store rescue</dt>
-                <dd class="price">from $500</dd>
-                <dd class="what">Your app was rejected. We find the cause, fix it, write the reply to App Review, and resubmit.</dd>
-            </div>
-            <div>
-                <dt>Web app to the App Store and Google Play</dt>
-                <dd class="price">from $1,800</dd>
-                <dd class="what">We wrap your web app for iPhone and Android, add the native features it needs, prepare the store listings, and take it through approval.</dd>
-            </div>
-            <div>
-                <dt>In-app subscriptions</dt>
-                <dd class="price">from $1,200</dd>
-                <dd class="what">Subscriptions on both stores through RevenueCat: the paywall, restore purchases, and sandbox testing, set up so renewals and cancellations are handled correctly.</dd>
-            </div>
-            <div>
-                <dt>Care plan</dt>
-                <dd class="price">from $200<small>per month</small></dd>
-                <dd class="what">New iOS and Android versions, SDK updates, store policy changes, and small fixes, so the app keeps working after launch.</dd>
-            </div>
-        </dl>
-    </div>
-</section>
-
 <section class="hm-sec" id="work">
     <div class="wrap">
-        <h2>Our own apps are the proof</h2>
+        <h2>Apps we have built and run</h2>
         <p class="intro">We build and run apps of our own, so the problems we fix for clients are ones we have already solved on a live product. Montebay is a small studio in Sunrise, Florida: your app is built by the same developer who built and shipped Svelio, not handed off.</p>
         <div class="case">
             <div>
@@ -258,7 +232,7 @@
                     <h3>Wordflect</h3>
                     <p>A minimalist word puzzle game.</p>
                     <span class="status" data-st="ready">Live on the App Store</span>
-                    <p><a href="https://wordflect.com">wordflect.com</a></p>
+                    <p><a class="tap" href="https://wordflect.com">wordflect.com</a></p>
                 </div>
             </div>
             <div class="app">
@@ -269,10 +243,44 @@
                 <div>
                     <h3>Soteria</h3>
                     <p>A behavioral finance app that adds a pause before money decisions.</p>
-                    <span class="status" data-st="review">In development, not yet released</span>
+                    <span class="status" data-st="review">Built, not yet released</span>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="hm-sec" id="pricing">
+    <div class="wrap">
+        <h2>Fixed prices</h2>
+        <p class="intro">Every project starts with a free look at your app. You get a written quote for a fixed price before we start, and the code stays yours.</p>
+        <dl class="prices">
+            <div>
+                <dt>App Store rescue</dt>
+                <dd class="price">from $500</dd>
+                <dd class="what">Your app was rejected. We find the cause, fix it, write the reply to App Review, and resubmit.</dd>
+                <dd class="time">Typically about 1 week, including Apple&rsquo;s review</dd>
+            </div>
+            <div>
+                <dt>Web app to the App Store and Google Play</dt>
+                <dd class="price">from $1,800</dd>
+                <dd class="what">We wrap your web app for iPhone and Android, add the native features it needs, prepare the store listings, and take it through approval.</dd>
+                <dd class="time">Typically 3 to 6 weeks. iPhone usually takes 2 to 3 weeks; Android can take longer because of Google&rsquo;s 14-day testing rule for new accounts</dd>
+            </div>
+            <div>
+                <dt>In-app subscriptions</dt>
+                <dd class="price">from $1,200</dd>
+                <dd class="what">Subscriptions on both stores through RevenueCat: the paywall, restore purchases, and sandbox testing, set up so renewals and cancellations are handled correctly.</dd>
+                <dd class="time">Typically 1 to 2 weeks</dd>
+            </div>
+            <div>
+                <dt>Care plan</dt>
+                <dd class="price">from $200<small>per month</small></dd>
+                <dd class="what">New iOS and Android versions, SDK updates, store policy changes, and small fixes, so the app keeps working after launch.</dd>
+                <dd class="time">Ongoing, with replies within one business day</dd>
+            </div>
+        </dl>
+        <p class="prices-note">Store review times are set by Apple and Google, so the timelines above include a typical review.</p>
     </div>
 </section>
 
@@ -321,6 +329,10 @@
                 <p>Yes. The Apple Developer Program is $99 a year and a Google Play developer account is a one-time $25. We can walk you through setting both up.</p>
             </details>
             <details>
+                <summary>Why does Android take longer?</summary>
+                <p>Google requires new personal developer accounts to run a closed test with at least 12 testers for 14 days in a row before an app can go public. We plan the schedule around it and help you organize testers. Organization accounts are exempt, and we can tell you whether switching makes sense.</p>
+            </details>
+            <details>
                 <summary>What if my app was already rejected?</summary>
                 <p>Send us the rejection message. That is exactly what the App Store rescue package is for.</p>
             </details>
@@ -332,11 +344,12 @@
     <div class="wrap">
         <div>
             <h2>Tell us about your app</h2>
-            <p class="intro">Where it is now, where it needs to go, and what is in the way. We read every message and reply with an honest read on scope and price.</p>
+            <p class="intro">Where it is now, where it needs to go, and what is in the way. Send a link or a rejection message and we will tell you what it takes.</p>
             <div class="cta-actions">
-                <a class="btn btn-primary" href="contact.html">Tell us about your app</a>
+                <a class="btn btn-primary" href="contact.html">Get a free review</a>
                 <a class="btn" href="mailto:contact@montebay.io">contact@montebay.io</a>
             </div>
+            <p class="reply-note">We reply within one business day.</p>
         </div>
         <div class="markframe" aria-hidden="true">
             <div class="markwin">

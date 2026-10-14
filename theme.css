@@ -810,3 +810,25 @@ h1, h2, h3 {
 @media (max-width: 560px) {
     .log .why, .app p, .app .status, .meta, .log-head span, .log time { font-size: 16px; }
 }
+
+/* Grade fixes (2026-10-14) -------------------------------------------------- */
+.reply-note { margin-top: var(--s4); font-size: 15px; color: var(--muted); }
+.prices .time { grid-area: 3 / 1; margin: var(--s2) 0 0; font-size: 15px; color: var(--text); max-width: 60ch; }
+@media (max-width: 560px) { .prices .time, .reply-note { font-size: 16px; } }
+.tap { display: inline-flex; align-items: center; min-height: 44px; }
+.row-flush { border-top: 0; padding-top: var(--s4); }
+/* Form labels and the mobile theme label join the sentence-case system. */
+.field label, .theme-row .label {
+    font-family: var(--body); text-transform: none; letter-spacing: 0;
+    font-size: 15px; font-weight: 600;
+}
+/* Keep the name visible on phones; the mark alone did not say who this is. */
+@media (max-width: 420px) {
+    .hdr .name { display: inline; font-size: 11px; letter-spacing: .14em; }
+}
+/* One readable screenshot on phones instead of three at 114px. */
+@media (max-width: 560px) {
+    #work .shots picture:not(:first-child) { display: none; }
+    #work .shots picture:first-child { display: block; width: min(100%, 260px); }
+    #work .shots img { max-width: none; width: 100%; }
+}
