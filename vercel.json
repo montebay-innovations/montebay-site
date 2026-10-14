@@ -46,6 +46,26 @@
       "source": "/wordflect.html",
       "destination": "https://wordflect.com",
       "permanent": true
+    },
+    {
+      "source": "/app-development.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-intelligent-systems.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-diagnostic.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/soteria.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
