@@ -832,3 +832,54 @@ h1, h2, h3 {
     #work .shots picture:first-child { display: block; width: min(100%, 260px); }
     #work .shots img { max-width: none; width: 100%; }
 }
+
+/* Second grade fixes (2026-10-14) ------------------------------------------- */
+.hm-hero h1 { letter-spacing: -0.02em; }
+.hm-sec h2 { max-width: 30ch; }
+
+/* Where apps get stuck: rows that read down, like the price list. */
+.stuck { display: block; max-width: 60rem; margin-top: var(--s12); }
+.stuck > div {
+    display: grid; grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: var(--s4) var(--s12);
+    padding-block: var(--s6); border-top: 1px solid color-mix(in srgb, var(--hair) 45%, transparent);
+}
+.stuck > div:last-child { border-bottom: 1px solid color-mix(in srgb, var(--hair) 45%, transparent); }
+.stuck dt { font-family: var(--display); font-variation-settings: "wdth" 100; font-weight: 600; font-size: 21px; letter-spacing: -0.01em; line-height: 1.25; }
+.stuck dd { margin: 0; color: var(--muted); max-width: 58ch; }
+
+/* Two legible screenshots instead of three small ones. */
+#work .shots { justify-content: flex-start; }
+#work .shots img { max-width: 260px; }
+
+/* Form help and errors: larger, and the error colour from the theme tokens
+   (the old literal measured about 4.3:1 on Surf). */
+.field .hint, .field .err { font-size: 15px; }
+.field .err { color: var(--st-rejected); }
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--st-rejected); }
+
+/* Contact page: the form and what happens next, side by side. */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); gap: var(--s16); align-items: start; }
+.next { border-left: 1px solid color-mix(in srgb, var(--hair) 45%, transparent); padding-left: var(--s12); }
+.next h2 { font-size: 24px; font-variation-settings: "wdth" 96; margin-bottom: var(--s6); }
+.next h3 { font-size: 17px; font-variation-settings: "wdth" 100; margin: var(--s8) 0 var(--s3); }
+.next-steps { margin: 0; padding-left: 1.2em; display: grid; gap: var(--s4); color: var(--muted); }
+.next-steps strong { color: var(--text); }
+.mini-prices { margin: 0; display: grid; gap: var(--s2); }
+.mini-prices > div { display: flex; justify-content: space-between; gap: var(--s4); padding-bottom: var(--s2); border-bottom: 1px solid color-mix(in srgb, var(--hair) 30%, transparent); }
+.mini-prices dt { color: var(--text); }
+.mini-prices dd { margin: 0; color: var(--muted); font-variant-numeric: tabular-nums; }
+.next-proof { margin-top: var(--s8); color: var(--muted); }
+
+@media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: var(--s12); }
+    .next { border-left: 0; padding-left: 0; border-top: 1px solid color-mix(in srgb, var(--hair) 45%, transparent); padding-top: var(--s8); }
+}
+@media (max-width: 700px) {
+    .stuck > div { grid-template-columns: 1fr; gap: var(--s2); }
+}
+/* Phones: description before timeline (the base .time placement above was
+   overriding the stacked order). */
+@media (max-width: 560px) {
+    .prices dt, .prices .price, .prices .what, .prices .time { grid-area: auto; }
+    #work .shots picture:not(:first-child) { display: none; }
+}
