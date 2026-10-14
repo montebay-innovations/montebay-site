@@ -214,12 +214,13 @@
 <section class="hm-sec" id="work">
     <div class="wrap">
         <h2>Our own apps are the proof</h2>
-        <p class="intro">We build and run apps of our own, so the problems we fix for clients are ones we have already solved on a live product.</p>
+        <p class="intro">We build and run apps of our own, so the problems we fix for clients are ones we have already solved on a live product. Montebay is a small studio in Sunrise, Florida: your app is built by the same developer who built and shipped Svelio, not handed off.</p>
         <div class="case">
             <div>
                 <h3>Svelio</h3>
                 <p class="lede">A nutrition app that reads food labels and analyzes meal photos. It began as a Next.js web app and now runs as a native app on both stores.</p>
                 <dl class="facts">
+                    <div><dt>App Review</dt><dd>Approved three days after the first rejection</dd></div>
                     <div><dt>Platforms</dt><dd>iPhone, iPad and Android, from one codebase with Capacitor</dd></div>
                     <div><dt>Payments</dt><dd>StoreKit and Google Play Billing through RevenueCat, plus Stripe on the web</dd></div>
                     <div><dt>Native features</dt><dd>Apple Health and Health Connect, home-screen widgets, push notifications, LiDAR plate measurement</dd></div>
@@ -327,13 +328,22 @@
     </div>
 </section>
 
-<section class="hm-sec cta-close" id="contact">
+<section class="hm-sec cta-close hm-close" id="contact">
     <div class="wrap">
-        <h2>Tell us about your app</h2>
-        <p class="intro">Where it is now, where it needs to go, and what is in the way. We read every message and reply with an honest read on scope and price.</p>
-        <div class="cta-actions">
-            <a class="btn btn-primary" href="contact.html">Tell us about your app</a>
-            <a class="btn" href="mailto:contact@montebay.io">contact@montebay.io</a>
+        <div>
+            <h2>Tell us about your app</h2>
+            <p class="intro">Where it is now, where it needs to go, and what is in the way. We read every message and reply with an honest read on scope and price.</p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="contact.html">Tell us about your app</a>
+                <a class="btn" href="mailto:contact@montebay.io">contact@montebay.io</a>
+            </div>
+        </div>
+        <div class="markframe" aria-hidden="true">
+            <div class="markwin">
+                <video muted loop playsinline preload="metadata" tabindex="-1">
+                    <source src="assets/videos/montebay_ocean_loop.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
     </div>
 </section>
@@ -343,10 +353,22 @@
 <footer class="foot">
     <div class="wrap">
         <span class="meta">&copy; 2026 Montebay Innovations LLC, Sunrise, Florida</span>
-        <a class="meta" href="contact.html">Contact</a>
+        <a class="meta foot-link" href="contact.html">Contact</a>
     </div>
 </footer>
 
 <script src="theme.js" defer></script>
+<script>
+(function () {
+    var v = document.querySelector('.hm-close video');
+    if (!v) return;
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (still.matches) { v.addEventListener('loadedmetadata', function () { v.currentTime = 2; }); v.load(); return; }
+    if (!('IntersectionObserver' in window)) { v.play().catch(function () {}); return; }
+    new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) v.play().catch(function () {}); else v.pause(); });
+    }, { rootMargin: '200px' }).observe(v);
+})();
+</script>
 </body>
 </html>
