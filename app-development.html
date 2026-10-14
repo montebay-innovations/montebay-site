@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+<script>
+(function(){
+  try {
+    var p = localStorage.getItem('montebay-theme') || 'system';
+    var t = (p === 'surf' || p === 'rock') ? p
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'rock' : 'surf');
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { document.documentElement.setAttribute('data-theme','surf'); }
+})();
+</script>
+
+<link rel="canonical" href="https://montebay.io/app-development.html">
+<title>App Development | Montebay Innovations</title>
+<meta name="description" content="We turn web apps into real iPhone and Android apps, with subscriptions, health data and App Review handled. Case study: Svelio, live on the App Store and Google Play.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://montebay.io/app-development.html">
+<meta property="og:title" content="App Development | Montebay Innovations">
+<meta property="og:description" content="Web app to App Store and Google Play, with subscriptions and App Review handled. See how we built and shipped Svelio.">
+<meta property="og:image" content="https://montebay.io/montebay_logo.webp">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<header class="hdr">
+    <div class="mark">
+        <a href="index.html" style="display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit">
+            <span class="logo" role="img" aria-label="Montebay Innovations"></span>
+            <span class="name">Montebay Innovations</span>
+        </a>
+    </div>
+    <nav id="site-nav" aria-label="Main navigation">
+        <a href="index.html#products">Products</a>
+        <a href="app-development.html" aria-current="page">App development</a>
+        <a href="ai-intelligent-systems.html">Advisory</a>
+        <a href="contact.html">Contact</a>
+        <div class="theme-row">
+            <span class="label">Theme</span>
+            <div class="theme-picker" role="radiogroup" aria-label="Colour theme">
+                <button type="button" data-theme="system" role="radio" aria-checked="false" title="Match system" aria-label="Match system">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </button>
+                <button type="button" data-theme="surf" role="radio" aria-checked="false" title="Surf, light" aria-label="Surf, light theme">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/></svg>
+                </button>
+                <button type="button" data-theme="rock" role="radio" aria-checked="false" title="Rock, dark" aria-label="Rock, dark theme">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6.4 6.4 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <svg class="ico-open" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="7" y2="7"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="17" y2="17"/></svg>
+        <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" x2="18" y1="6" y2="18"/><line x1="6" x2="18" y1="18" y2="6"/></svg>
+    </button>
+    <div class="theme-picker" role="radiogroup" aria-label="Colour theme">
+        <button type="button" data-theme="system" role="radio" aria-checked="false" title="Match system" aria-label="Match system">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </button>
+        <button type="button" data-theme="surf" role="radio" aria-checked="false" title="Surf, light" aria-label="Surf, light theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/></svg>
+        </button>
+        <button type="button" data-theme="rock" role="radio" aria-checked="false" title="Rock, dark" aria-label="Rock, dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6.4 6.4 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+    </div>
+</header>
+
+<main id="main">
+
+<section class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">App development</span>
+        <h1>We turn web apps into real iPhone and Android apps.</h1>
+        <p class="lede">Subscriptions that work on both stores, health data, widgets and push notifications, and an app that actually gets through App Review. We have shipped all of it on our own product, and we can do the same for yours.</p>
+        <div class="cta-actions">
+            <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+            <a class="btn" href="#svelio">See the case study</a>
+        </div>
+    </div>
+</section>
+
+<section class="row" id="svelio">
+    <div class="wrap">
+        <div class="plate">
+            <div>
+                <span class="eyebrow">Case study</span>
+                <h2>Svelio</h2>
+                <span class="meta">iOS &middot; Android &middot; live</span>
+                <p class="lede">A nutrition app that reads food labels and analyzes meal photos. It started as a Next.js web app. To become a real mobile product it needed things a website cannot do, and it had to pass Apple and Google review. We designed, built and launched it end to end.</p>
+                <div class="cta-actions">
+                    <a class="btn" href="https://apps.apple.com/us/app/svelio/id6763038233">App Store</a>
+                    <a class="btn" href="https://play.google.com/store/apps/details?id=io.svelio.app">Google Play</a>
+                </div>
+            </div>
+            <div class="shots">
+                <picture>
+                    <source srcset="assets/images/svelio/1-analysis.webp" type="image/webp">
+                    <img src="assets/images/svelio/1-analysis.png" alt="Svelio reading a food label" loading="lazy" width="420" height="910" decoding="async">
+                </picture>
+                <picture>
+                    <source srcset="assets/images/svelio/5-dashboard.webp" type="image/webp">
+                    <img src="assets/images/svelio/5-dashboard.png" alt="Svelio daily dashboard" loading="lazy" width="420" height="910" decoding="async">
+                </picture>
+                <picture>
+                    <source srcset="assets/images/svelio/3-coach.webp" type="image/webp">
+                    <img src="assets/images/svelio/3-coach.png" alt="Svelio coach screen" loading="lazy" width="420" height="910" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <div class="wrap">
+        <span class="eyebrow">What we built</span>
+        <h2 class="h2-sm measure-tight">One codebase, three platforms</h2>
+        <div class="grid-3" style="margin-top:var(--s8);grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))">
+            <div class="card">
+                <h3>Native shells for a web app</h3>
+                <p>The Next.js app runs inside native iOS and Android shells with Capacitor, extended by custom plugins in Swift and Kotlin for health data, home-screen widgets, push notifications and LiDAR plate measurement.</p>
+            </div>
+            <div class="card">
+                <h3>Subscriptions everywhere</h3>
+                <p>In-app purchases through StoreKit and Google Play Billing, managed with RevenueCat, plus Stripe on the web. One entitlement system, and restore purchases that work.</p>
+            </div>
+            <div class="card">
+                <h3>Two-way health data</h3>
+                <p>Meals sync to Apple Health and Android Health Connect, and activity data flows back into the app.</p>
+            </div>
+            <div class="card">
+                <h3>AI features</h3>
+                <p>Meal-photo analysis with Claude and Gemini vision models, matched against USDA nutrition data, and nutrition-label reading with AWS Textract.</p>
+            </div>
+            <div class="card">
+                <h3>A production backend</h3>
+                <p>AWS Lambda, DynamoDB and S3 behind a Vercel deployment, with error monitoring, separate staging and production environments, and more than 3,000 automated tests.</p>
+            </div>
+            <div class="card">
+                <h3>Finish</h3>
+                <p>Light and dark themes, a full-screen iPad layout, and offline support that queues actions until the connection comes back.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <div class="wrap">
+        <span class="eyebrow">App Review</span>
+        <h2 class="h2-sm measure-tight">Getting through Apple and Google</h2>
+        <p class="lede spaced">Apple's first review flagged subscription disclosure requirements, guidelines 3.1.2(c) and 2.1(b), and surfaced a restore-purchase bug. We fixed the paywall disclosures and the restore flow, replied to App Review, resubmitted, and Svelio was approved in May 2026. On Android it went through Google Play closed testing with the Play billing chain verified end to end before launching publicly.</p>
+    </div>
+</section>
+
+<section class="row" id="packages">
+    <div class="wrap">
+        <span class="eyebrow">How we can help</span>
+        <h2 class="h2-sm measure-tight">Fixed-price packages</h2>
+        <div class="grid-2" style="margin-top:var(--s8)">
+            <div class="card">
+                <h3>App Store rescue</h3>
+                <span class="meta">From $500</span>
+                <p>We diagnose your rejection, fix it, write the reply to App Review, and resubmit.</p>
+            </div>
+            <div class="card">
+                <h3>Web app to App Store</h3>
+                <span class="meta">From $1,800</span>
+                <p>Your web app wrapped for iPhone and Android, with native polish, store listings, and submission through approval.</p>
+            </div>
+            <div class="card">
+                <h3>Subscriptions, done right</h3>
+                <span class="meta">From $1,200</span>
+                <p>In-app subscriptions on both stores through RevenueCat: paywall, restore purchases, and sandbox testing.</p>
+            </div>
+            <div class="card">
+                <h3>Monthly care plan</h3>
+                <span class="meta">From $200 a month</span>
+                <p>OS and SDK updates, store policy changes, small fixes, and priority support, so the app keeps working after launch.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row cta-close" id="contact">
+    <div class="wrap">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="h2-sm measure-tight">Tell us about your app</h2>
+        <p class="lede">Where it is now, where it needs to go, and what is in the way. We read every message and reply with an honest read on scope and price.</p>
+        <div class="cta-actions">
+            <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span class="meta">&copy; 2026 Montebay Innovations LLC</span>
+    </div>
+</footer>
+
+<script src="theme.js" defer></script>
+</body>
+</html>
